@@ -34,7 +34,7 @@ class Register extends Component {
       name: this.state.registerName,
       password: this.state.registerPassword,
     });
-    const response = await axios.post('auth/register', body, config);
+    const response = await axios.post('https://peaceful-crag-63810.herokuapp.com/auth/register', body, config);
     const { user } = response.data;
     if (user.id) {
       this.props.loadUser(user);

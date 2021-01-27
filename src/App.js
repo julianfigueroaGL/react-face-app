@@ -103,13 +103,13 @@ class App extends Component {
     });
 
     try {
-      const { data } = await axios.post('image', body, config);
+      const { data } = await axios.post('https://peaceful-crag-63810.herokuapp.com/image', body, config);
       if (data) {
         try {
           body = JSON.stringify({
             id: this.state.user.id,
           });
-          const imageResponse = await axios.put('image', body, config);
+          const imageResponse = await axios.put('https://peaceful-crag-63810.herokuapp.com/image', body, config);
           const { user } = imageResponse.data;
           this.setState({ user });
         } catch (error) {

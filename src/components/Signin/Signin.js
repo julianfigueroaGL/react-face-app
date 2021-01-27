@@ -28,7 +28,7 @@ class Signin extends Component {
       email: this.state.signInEmail,
       password: this.state.signInPassword,
     });
-    const response = await axios.post('auth/signin', body, config);
+    const response = await axios.post('https://peaceful-crag-63810.herokuapp.com/auth/signin', body, config);
     const { user } = response.data;
     if (user.id) {
       this.props.loadUser(user);
